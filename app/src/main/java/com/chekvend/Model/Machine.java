@@ -99,6 +99,13 @@ public class Machine {
             return true;
     }
 
+    public double returnAllCoins() {
+        double returning = totalReturning + totalInserted;
+        totalReturning = 0;
+        totalInserted = 0;
+        return returning;
+    }
+
     public double getTotalInserted() {
         return totalInserted;
     }

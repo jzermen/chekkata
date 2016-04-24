@@ -149,6 +149,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        return_coins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                machine.returnAllCoins();
+                updateTotals();
+                display_message.setText(R.string.insert_coins);
+            }
+        });
+
     }
 
     public void updateTotals() {

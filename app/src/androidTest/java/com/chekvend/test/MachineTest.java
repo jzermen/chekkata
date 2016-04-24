@@ -137,4 +137,20 @@ public class MachineTest extends AndroidTestCase {
         assertFalse(machine.purchase(new Product(Constants.CHIPS)));
     }
 
+    public void testReturnAllCoinsReturnsCorrectAmount() {
+        Machine machine = new Machine();
+        machine.setTotalReturning(6.0);
+        machine.setTotalInserted(0.5);
+        assertEquals(6.5, machine.returnAllCoins());
+    }
+
+    public void testReturnAllCoinsResetsCoinValuesInMachine() {
+        Machine machine = new Machine();
+        machine.setTotalReturning(6.0);
+        machine.setTotalInserted(0.5);
+        machine.returnAllCoins();
+        assertEquals(0.0, machine.getTotalReturning());
+        assertEquals(0.0, machine.getTotalInserted());
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.chekvend.Model;
+package com.chekvend;
 
 import com.chekvend.Constants;
 import com.chekvend.Model.Coin;
@@ -89,14 +89,9 @@ public class Machine {
     }
 
     public boolean isProductInStock(Product product) {
-        if (product.getId() == Constants.CHIPS && chips == 0)
-            return false;
-        else if (product.getId() == Constants.CANDY && candies == 0)
-            return false;
-        else if (product.getId() == Constants.COLA && colas == 0)
-            return false;
-        else
-            return true;
+        return !((product.getId() == Constants.CHIPS && chips == 0)
+                || (product.getId() == Constants.CANDY && candies == 0)
+                || (product.getId() == Constants.COLA && colas == 0));
     }
 
     public double returnAllCoins() {

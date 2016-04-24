@@ -1,9 +1,7 @@
 package com.chekvend;
 
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.test.suitebuilder.TestSuiteBuilder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -29,7 +27,35 @@ public class MainActivity extends AppCompatActivity {
         df = new DecimalFormat("0.00");
 
         machine = new Machine();
+        setUpStaticUIElements();
+        setUpDynamicUIElements();
+        updateQuantities();
+    }
 
+
+    public void updateTotals() {
+        double value = machine.getTotalInserted();
+        inserted_total.setText("$" + df.format(value));
+        value = machine.getTotalReturning();
+        return_total.setText("$" + df.format(value));
+    }
+
+    public void updateQuantities() {
+        quantity_chips.setText(String.valueOf(machine.getChips()));
+        quantity_cola.setText(String.valueOf(machine.getColas()));
+        quantity_candy.setText(String.valueOf(machine.getCandies()));
+    }
+
+    public void setUpDynamicUIElements() {
+        return_total = (TextView) findViewById(R.id.return_total);
+        inserted_total = (TextView) findViewById(R.id.display_inserted);
+        display_message = (TextView) findViewById(R.id.display_message);
+        quantity_chips = (TextView) findViewById(R.id.quantity_chips);
+        quantity_cola = (TextView) findViewById(R.id.quantity_cola);
+        quantity_candy = (TextView) findViewById(R.id.quantity_candy);
+    }
+
+    public void setUpStaticUIElements() {
         ImageView penny = (ImageView) findViewById(R.id.penny);
         ImageView nickel = (ImageView) findViewById(R.id.nickel);
         ImageView dime = (ImageView) findViewById(R.id.dime);
@@ -39,14 +65,6 @@ public class MainActivity extends AppCompatActivity {
         Button select_chips = (Button) findViewById(R.id.button_chips);
         Button select_cola = (Button) findViewById(R.id.button_cola);
         Button select_candy = (Button) findViewById(R.id.button_candy);
-        return_total = (TextView) findViewById(R.id.return_total);
-        inserted_total = (TextView) findViewById(R.id.display_inserted);
-        display_message = (TextView) findViewById(R.id.display_message);
-        quantity_chips = (TextView) findViewById(R.id.quantity_chips);
-        quantity_cola = (TextView) findViewById(R.id.quantity_cola);
-        quantity_candy = (TextView) findViewById(R.id.quantity_candy);
-
-        updateQuantities();
 
         penny.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,20 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 display_message.setText(R.string.insert_coins);
             }
         });
-
     }
 
-    public void updateTotals() {
-        double value = machine.getTotalInserted();
-        inserted_total.setText("$" + df.format(value));
-        value = machine.getTotalReturning();
-        return_total.setText("$" + df.format(value));
-    }
-
-    public void updateQuantities() {
-        quantity_chips.setText(String.valueOf(machine.getChips()));
-        quantity_cola.setText(String.valueOf(machine.getColas()));
-        quantity_candy.setText(String.valueOf(machine.getCandies()));
-    }
 
 }

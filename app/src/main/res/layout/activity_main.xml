@@ -78,7 +78,6 @@
                 android:id="@+id/return_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$0.00"
                 android:textSize="24sp" />
 
 
@@ -99,7 +98,7 @@
             android:layout_height="64dp"
             android:background="@color/messageBackground"
             android:gravity="center"
-            android:text="INSERT COINS"
+            android:text="@string/insert_coins"
             android:textAllCaps="true"
             android:textColor="@color/messageColor"
             android:textSize="24sp" />
@@ -111,7 +110,6 @@
             android:layout_height="64dp"
             android:background="@color/messageBackground"
             android:gravity="center"
-            android:text="$0.00"
             android:textAllCaps="true"
             android:textColor="@color/messageColor"
             android:textSize="24sp" />
@@ -142,7 +140,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$0.50"
+                android:text="@string/price_chips"
                 android:textSize="18sp" />
 
             <TextView
@@ -171,7 +169,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$1.00"
+                android:text="@string/price_cola"
                 android:textSize="18sp" />
 
             <TextView
@@ -200,7 +198,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$0.65"
+                android:text="@string/price_candy"
                 android:textSize="18sp" />
 
             <TextView

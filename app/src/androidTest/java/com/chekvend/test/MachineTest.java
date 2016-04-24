@@ -4,7 +4,7 @@ import android.test.AndroidTestCase;
 
 import com.chekvend.Constants;
 import com.chekvend.Model.Coin;
-import com.chekvend.Model.Machine;
+import com.chekvend.Machine;
 import com.chekvend.Model.Product;
 
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class MachineTest extends AndroidTestCase {
 
     public void testMachineComputesCorrectTotalInserted() {
         Machine machine = new Machine();
-        ArrayList<Coin> coinList = new ArrayList<Coin>();
+        ArrayList<Coin> coinList = new ArrayList<>();
 
         coinList.add(new Coin(Constants.QUARTER));
         coinList.add(new Coin(Constants.NICKEL));
@@ -41,7 +41,7 @@ public class MachineTest extends AndroidTestCase {
 
     public void testMachinePutCorrectInvalidChangeInReturn() {
         Machine machine = new Machine();
-        ArrayList<Coin> coinList = new ArrayList<Coin>();
+        ArrayList<Coin> coinList = new ArrayList<>();
 
         coinList.add(new Coin(Constants.GOLDEN_DOLLAR));
         coinList.add(new Coin(Constants.PENNY));
@@ -54,7 +54,7 @@ public class MachineTest extends AndroidTestCase {
 
     public void testMachineDeductCorrectTotalOnPurchase() {
         Machine machine = new Machine();
-        ArrayList<Coin> coinList = new ArrayList<Coin>();
+        ArrayList<Coin> coinList = new ArrayList<>();
         for (int i = 0; i < 4; i++)
             coinList.add(new Coin(Constants.QUARTER));
 
@@ -74,7 +74,7 @@ public class MachineTest extends AndroidTestCase {
 
     public void testIfUserWillRecieveChange() {
         Machine machine = new Machine();
-        ArrayList<Coin> coinList = new ArrayList<Coin>();
+        ArrayList<Coin> coinList = new ArrayList<>();
         for (int i = 0; i < 4; i++)
             coinList.add(new Coin(Constants.QUARTER));
 
@@ -126,7 +126,7 @@ public class MachineTest extends AndroidTestCase {
 
     public void testOutOfStock() {
         Machine machine = new Machine();
-        ArrayList<Coin> coinList = new ArrayList<Coin>();
+        ArrayList<Coin> coinList = new ArrayList<>();
         for (int i = 0; i < 4; i++)
             coinList.add(new Coin(Constants.QUARTER));
 

@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.chekvend.Model.Coin;
-import com.chekvend.Model.Machine;
 import com.chekvend.Model.Product;
 
 import java.text.DecimalFormat;
@@ -35,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateTotals() {
         double value = machine.getTotalInserted();
-        inserted_total.setText("$" + df.format(value));
+        inserted_total.setText(String.format(
+                getResources().getString(R.string.money_format), df.format(value)));
         value = machine.getTotalReturning();
-        return_total.setText("$" + df.format(value));
+        return_total.setText(String.format(
+                getResources().getString(R.string.money_format), df.format(value)));
     }
 
     public void updateQuantities() {

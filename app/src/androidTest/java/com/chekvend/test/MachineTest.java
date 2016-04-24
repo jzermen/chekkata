@@ -136,4 +136,5 @@ public class MachineTest extends AndroidTestCase {
         machine.setChips(0);
         assertFalse(machine.purchase(new Product(Constants.CHIPS)));
     }
+
 }

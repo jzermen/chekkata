@@ -19,7 +19,7 @@ public class Coin {
             this.name = "Nickel";
             this.isValid = true;
         } else if (weight == Constants.DIME) {
-            this.value = 0.1;
+            this.value = 0.10;
             this.name = "Dime";
             this.isValid = true;
         } else if (weight == Constants.QUARTER) {

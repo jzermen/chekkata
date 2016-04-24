@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">ChekVend</string>
-    <string name="insert_coins">Insert</string>
+    <string name="insert_coins">Insert Coins</string>
     <string name="sold_out">Sold Out</string>
+    <string name="thank_you">Thank You</string>
+    <string name="price">Price: %1$s</string>
     <string name="inserted">Inserted</string>
     <string name="returning">Return</string>
     <string name="return_coins">Return Coins</string>
